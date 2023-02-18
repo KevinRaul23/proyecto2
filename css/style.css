@@ -1,0 +1,299 @@
+:root{   /*Custom Properties */
+
+    --primario:#9c27B0;
+    --primarioOscuro:#89119D;
+    --secundario:#FFCE00;
+    --secundarioOscuro: rgb(233,287,2);
+    --blanco:#FFF;
+    --negro:#000;
+    --azul:	#00304E;
+    --azulclaro:#235777;
+    --verde:#98FF98;
+    --fuentePrincipal:  'Montserrat', sans-serif;
+
+    
+}
+
+html { /*NO DEBE DE FALTAR EN NINGUN PROYECTO*/
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Globales*/
+body{
+    background-color: var(--azul);
+    font-size: 1.6rem;
+    line-height: 1.5;
+
+}
+
+p{
+    font-size:1.8rem ;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto; /*para centrarlo*/
+}
+
+h1,h2,h3{
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+/*Header*/
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    margin: 3rem 0 ;/*arriba y abajo*/
+}
+
+/*Navegacion*/
+
+.navegacion{
+    background-color: var(--azulclaro);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap:2rem; /*para separar letras*/
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+
+/* se puede usar en vez del gap para un mejor soporte
+.navegacion__enlace:last-of-type{
+    margin-right: 0;
+}*/
+
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{ /*para que cambie de color al pasar el cursor*/
+    color: var(--secundario);
+
+}
+
+
+.footer{
+    background-color: var(--azulclaro);
+    padding: 0.5rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.5rem;
+}
+
+/*GRID*/
+
+/*para una tienda virtual necesito este codigo*/
+.grid{
+    display: grid; /*para que las imagenes salgan en columnas*/
+    grid-template-columns: repeat(2,1fr);/*para que las imagenes salgan en columnas de dos*/
+    column-gap:  2rem; /*para darle separacion horizontal */
+    row-gap:  2rem; /*para darle separacion abajo */
+    /*o tambien  se puede gap: 2rem; 
+    para ahorrar codigo.*/
+}
+
+@media (min-width:768px){
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+/*este de arriba*/
+
+
+
+
+/*PRODUCTOS*/
+
+.producto{
+    background-color: var(--azulclaro);
+    padding: 1rem;/*para centrar la imagen en el div*/
+}
+
+
+.producto__imagen{
+    width: 100% ;/*para llenar el espacio del div*/
+
+}
+
+
+
+
+.producto__nombre{
+  font-size: 3rem;
+  
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+    
+}
+
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;/*para el interlineado de ambos*/
+}
+
+
+/*GRAFICOS*/
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;/*para que se llene todo el espacio en el grid*/
+    grid-column: 1 / 3;/*para que se extienda de la primera columna a la tercer columna*/
+}
+
+.grafico--camisa{
+    grid-row: 2 / 3; /*para que vaya de arriba hacia abajo*/
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node{
+    
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width:768px){
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/*Nosotros*/
+
+
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width:768px){
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+
+.nosotros__imagen{
+    grid-row: 1 / 2;
+    width: 100%;
+}
+
+@media (min-width:768px){
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+    
+}
+
+/*BLOQUES*/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:2rem
+}
+
+@media (min-width:768px){
+    .bloques{
+      
+        grid-template-columns: repeat(4, 1fr);
+        
+    }
+}
+.bloque{
+    text-align: center;
+}
+
+.bloque__titulo{
+    margin: 0;
+
+}
+
+.bloque__imagen{
+    width: 50%;
+}
+
+/**Pagina del Producto **/
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__campo {
+   border: 1rem solid var(--azulclaro);
+   background-color: transparent;
+   color: var(--blanco);
+   font-size: 2rem;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 1rem;
+   appearance: none;
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
