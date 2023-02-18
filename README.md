@@ -1,2 +1,2 @@
 # proyecto_Tienda
-Tienda online
+Segundo commit
