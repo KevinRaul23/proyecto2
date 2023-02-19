@@ -278,11 +278,12 @@ h3{
 .formulario__campo {
    border: 1rem solid var(--azulclaro);
    background-color: transparent;
-   color: var(--blanco);
+   /*color: var(--blanco);*/
    font-size: 2rem;
    font-family: Arial, Helvetica, sans-serif;
    padding: 1rem;
    appearance: none;
+   
 }
 .formulario__submit {
     background-color: var(--secundario);
@@ -297,3 +298,16 @@ h3{
     cursor: pointer;
     background-color: var(--secundarioOscuro);
 }
+
+
+/*descuento*/
+
+.descuento{
+    font-size: 2rem;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    line-height: 1.2;/*para el interlineado de ambos*/
+    text-decoration: line-through;
+}
+
